@@ -1,4 +1,4 @@
-import{j as e,H as i}from"./app-CKKqXM-f.js";import{P as t}from"./PortfolioLayout-D2S_B7FA.js";function r({auth:a}){return e.jsxs(t,{auth:a,children:[e.jsx(i,{title:"About - Muhammad Raihan"}),e.jsx("style",{dangerouslySetInnerHTML:{__html:`
+import{j as e,H as i}from"./app-VmLk_eGs.js";import{P as t}from"./PortfolioLayout-Dgo-ikBX.js";function r({auth:a}){return e.jsxs(t,{auth:a,children:[e.jsx(i,{title:"About - Muhammad Raihan"}),e.jsx("style",{dangerouslySetInnerHTML:{__html:`
                 /* About */
                 .about{ max-width: 1100px; margin: 0 auto; padding: 20px 40px 120px; position:relative; overflow:hidden; }
                 .about-eyebrow{ font-size:11px; letter-spacing:0.18em; color:var(--muted); margin-bottom:14px; }

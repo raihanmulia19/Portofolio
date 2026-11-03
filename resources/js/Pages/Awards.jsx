@@ -184,11 +184,17 @@ export default function Awards({ auth }) {
                     <button className="close-btn" onClick={() => setSelectedCert(null)}>&times;</button>
                     {selectedCert && (
                         <>
-                            <img 
-                                src={selectedCert.image || "https://placehold.co/800x600/1a1a1a/ffffff?text=Gambar+Sertifikat+Belum+Tersedia"} 
-                                alt={selectedCert.title} 
-                                className="cert-image" 
-                            />
+                            {selectedCert.image ? (
+                                <img 
+                                    src={selectedCert.image} 
+                                    alt={selectedCert.title} 
+                                    className="cert-image" 
+                                />
+                            ) : (
+                                <div style={{ width: '480px', maxWidth: '80vw', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', borderRadius: '8px', border: '1px solid var(--line)', color: 'var(--muted)', fontSize: '15px', fontWeight: 600 }}>
+                                    Gambar Sertifikat Belum Tersedia
+                                </div>
+                            )}
                             <div className="cert-title">{selectedCert.title}</div>
                         </>
                     )}

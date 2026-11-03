@@ -191,12 +191,29 @@ export default function Projects({ auth }) {
                 }
 
                 @media (max-width: 768px) {
-                    .project-row {
-                        grid-template-columns: 40px 1fr;
-                        padding: 30px 0;
+                    .archive-container {
+                        padding: 28px 20px 80px;
                     }
-                    .project-link {
-                        display: none;
+                    .archive-header {
+                        margin-bottom: 32px;
+                    }
+                    .archive-title {
+                        font-size: 32px;
+                        margin-bottom: 12px;
+                    }
+                    .archive-subtitle {
+                        font-size: 14px;
+                    }
+                    .project-row {
+                        grid-template-columns: 32px 1fr 24px;
+                        gap: 12px;
+                        padding: 24px 0;
+                    }
+                    .project-content h3 {
+                        font-size: 16px;
+                    }
+                    .project-content p {
+                        font-size: 13.5px;
                     }
                 }
             `}} />

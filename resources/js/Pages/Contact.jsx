@@ -216,19 +216,52 @@ export default function Contact({ auth }) {
                 @media (max-width: 992px) {
                     .contact-container {
                         grid-template-columns: 1fr;
-                        gap: 80px;
+                        gap: 56px;
                     }
                     .contact-title {
                         font-size: 56px;
                     }
                 }
                 @media (max-width: 640px) {
+                    .contact-container {
+                        padding: 28px 20px 80px;
+                        gap: 36px;
+                    }
+                    .contact-eyebrow {
+                        margin-bottom: 14px;
+                    }
+                    .contact-title {
+                        font-size: clamp(38px, 11vw, 50px);
+                        margin-bottom: 20px;
+                    }
+                    .contact-subtitle-1 {
+                        font-size: 17px;
+                        margin-bottom: 14px;
+                    }
+                    .contact-subtitle-2 {
+                        font-size: 14px;
+                        margin-bottom: 28px;
+                    }
+                    .btn-resume {
+                        width: 100%;
+                        padding: 16px 24px;
+                    }
                     .contact-card {
-                        padding: 20px;
-                        gap: 16px;
+                        padding: 16px 18px;
+                        gap: 14px;
+                        border-radius: 16px;
+                    }
+                    .card-icon {
+                        width: 42px;
+                        height: 42px;
+                        border-radius: 10px;
                     }
                     .card-value {
                         font-size: 13px;
+                        word-break: break-word;
+                    }
+                    .btn-message {
+                        padding: 16px 24px;
                     }
                 }
             `}} />

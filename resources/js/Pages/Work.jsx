@@ -1,9 +1,10 @@
 import { Head, Link } from '@inertiajs/react';
 import PortfolioLayout from '@/Layouts/PortfolioLayout';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function Work({ auth }) {
     const [activeIndex, setActiveIndex] = useState(2);
+    const touchStartX = useRef(null);
 
     const projects = [
         {
@@ -55,6 +56,23 @@ export default function Work({ auth }) {
 
     const handleCardClick = (index) => {
         setActiveIndex(index);
+    };
+
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e) => {
+        if (touchStartX.current === null) return;
+        const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+        if (Math.abs(deltaX) > 40) {
+            if (deltaX < 0) {
+                setActiveIndex((prev) => (prev + 1) % projects.length);
+            } else {
+                setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
+            }
+        }
+        touchStartX.current = null;
     };
 
     const getPos = (index) => {
@@ -194,12 +212,52 @@ export default function Work({ auth }) {
                   opacity: 0.7;
                 }
                 
+                .stack-dots {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 8px;
+                  margin: -36px 0 36px;
+                }
+                .stack-dot {
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 999px;
+                  border: none;
+                  padding: 0;
+                  background: var(--line);
+                  cursor: pointer;
+                  transition: all 0.25s ease;
+                }
+                .stack-dot.active {
+                  width: 24px;
+                  background: var(--text);
+                }
+
                 @media (max-width: 768px) {
-                  .stack { transform: scale(0.8); height: 220px; }
-                  .gallery-project { min-height: 220px; }
+                  .gallery { padding: 28px 20px 80px; }
+                  .gallery-head { margin-bottom: 36px; gap: 18px; }
+                  .gallery-head h2 { font-size: 30px; margin-bottom: 10px; }
+                  .gallery-head p { font-size: 14px; }
+                  .stack { height: 220px; margin: 0 0 44px; }
+                  .card[data-pos="0"] { width: 250px; height: 190px; transform: translateX(0) scale(1) translateY(0); }
+                  .card[data-pos="-1"] { width: 170px; height: 160px; transform: translateX(-95px) scale(0.92) translateY(10px); }
+                  .card[data-pos="1"] { width: 170px; height: 160px; transform: translateX(95px) scale(0.92) translateY(10px); }
+                  .card[data-pos="-2"] { width: 130px; height: 135px; transform: translateX(-145px) scale(0.85) translateY(18px); opacity: 0.4; }
+                  .card[data-pos="2"] { width: 130px; height: 135px; transform: translateX(145px) scale(0.85) translateY(18px); opacity: 0.4; }
+                  .stack-dots { margin: -20px 0 28px; }
+                  .gallery-project { min-height: auto; padding: 0 4px; }
+                  .gallery-project h3 { font-size: 20px; margin-bottom: 12px; }
+                  .gallery-project p { font-size: 13.5px; line-height: 1.6; margin-bottom: 20px; }
                 }
                 @media (max-width: 480px) {
-                  .stack { transform: scale(0.6); height: 180px; }
+                  .view-more { width: 100%; justify-content: center; }
+                  .stack { height: 200px; }
+                  .card[data-pos="0"] { width: 225px; height: 172px; }
+                  .card[data-pos="-1"] { width: 150px; height: 145px; transform: translateX(-75px) scale(0.9) translateY(10px); }
+                  .card[data-pos="1"] { width: 150px; height: 145px; transform: translateX(75px) scale(0.9) translateY(10px); }
+                  .card[data-pos="-2"] { width: 115px; height: 120px; transform: translateX(-112px) scale(0.82) translateY(18px); opacity: 0.35; }
+                  .card[data-pos="2"] { width: 115px; height: 120px; transform: translateX(112px) scale(0.82) translateY(18px); opacity: 0.35; }
                 }
             `}} />
 
@@ -213,7 +271,7 @@ export default function Work({ auth }) {
                     <Link href="/projects" className="view-more">View More Projects</Link>
                 </div>
 
-                <div className="stack">
+                <div className="stack" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                     {projects.map((project, index) => {
                         const pos = getPos(index);
                         return (
@@ -252,6 +310,18 @@ export default function Work({ auth }) {
                             </div>
                         );
                     })}
+                </div>
+
+                <div className="stack-dots">
+                    {projects.map((project, idx) => (
+                        <button
+                            key={project.id}
+                            type="button"
+                            className={`stack-dot ${idx === activeIndex ? 'active' : ''}`}
+                            onClick={() => setActiveIndex(idx)}
+                            aria-label={`Pilih proyek ${project.title}`}
+                        />
+                    ))}
                 </div>
 
                 <div className="gallery-project">

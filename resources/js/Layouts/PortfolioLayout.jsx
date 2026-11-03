@@ -376,16 +376,26 @@ export default function PortfolioLayout({ auth, children }) {
                 }
 
                 @media (max-width: 640px) {
-                  .nav { padding: 16px 18px; }
-                  .nav-links { display: none; }
-                  .hero { padding: 40px 0 30px; min-height: auto; }
-                  .eyebrow { padding: 0 18px; }
-                  .marquee span { font-size: clamp(46px, 20vw, 90px); }
-                  .photo-wrap { padding: 0 18px; }
-                  .photo-wrap img { width: 230px; }
-                  .intro { padding: 0 18px; }
-                  .intro-bottom { justify-content: center; flex-wrap: wrap; }
-                  .page-content { padding: 40px 20px; }
+                  .nav-outer { padding: 12px 14px 0; padding-top: calc(12px + env(safe-area-inset-top, 0px)); }
+                  .nav { padding: 10px 14px; gap: 10px; }
+                  .brand { font-size: 13px; gap: 8px; }
+                  .brand .mark-r { width: 30px; height: 30px; font-size: 18px; border-radius: 7px; }
+                  .nav-right { gap: 8px; }
+                  .icon-btn { width: 34px; height: 34px; font-size: 14px; }
+                  .hire-btn { padding: 8px 14px; font-size: 12px; white-space: nowrap; }
+                  .mobile-menu { top: calc(env(safe-area-inset-top, 0px) + 70px); left: 14px; right: 14px; padding: 12px; }
+                  .mobile-menu a { padding: 12px 16px; font-size: 13px; }
+                  .hero { padding: 28px 0 40px; min-height: auto; }
+                  .eyebrow { padding: 0 20px; margin-bottom: 28px; font-size: 10px; letter-spacing: 0.16em; line-height: 1.5; }
+                  .marquee { top: 38%; }
+                  .marquee span { font-size: clamp(54px, 18vw, 90px); }
+                  .photo-wrap { padding: 0 20px; }
+                  .photo-wrap img { width: min(240px, 70vw); }
+                  .intro { padding: 0 20px; margin-top: 24px; }
+                  .intro p { font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+                  .intro-bottom { justify-content: center; flex-wrap: wrap; gap: 18px; font-size: 13px; }
+                  .divider { max-width: calc(100% - 40px); margin: 22px auto 0; }
+                  .page-content { padding: 32px 20px; }
                 }
             `}} />
 

@@ -41,6 +41,17 @@ export default function About({ auth }) {
                 .deco-card.d3{ transform: rotate(-4deg); top:78px; right:60px; font-size:10px; letter-spacing:0.14em; color:var(--muted); }
 
                 @media (min-width: 900px){ .deco-cards{ display:block; } }
+                @media (max-width: 640px){
+                  .about{ padding: 28px 20px 80px; }
+                  .about-heading{ font-size: clamp(26px, 7.5vw, 34px); margin: 0 0 28px; line-height: 1.25; }
+                  .about-profile{ gap: 16px; align-items: center; margin-bottom: 22px; }
+                  .about-avatar{ width: 58px; height: 58px; }
+                  .about-name{ font-size: 15px; margin-bottom: 10px; }
+                  .about-stats{ gap: 20px; margin-bottom: 0; flex-wrap: wrap; }
+                  .stat-value{ font-size: 14px; }
+                  .about-text{ font-size: 13.5px; line-height: 1.7; margin: 0 0 32px; }
+                  .currently-row{ flex-direction: column; gap: 16px; }
+                }
             `}} />
 
             <section className="about" id="about">

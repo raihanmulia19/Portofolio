@@ -132,7 +132,7 @@ export default function WhatICanDo({ auth }) {
                 @media (max-width: 992px) {
                     .cap-grid {
                         grid-template-columns: 1fr;
-                        gap: 40px;
+                        gap: 32px;
                     }
                     .cap-rule {
                         width: 100%;
@@ -140,12 +140,53 @@ export default function WhatICanDo({ auth }) {
                     }
                     .icon-grid {
                         max-width: 100%;
-                        grid-template-columns: repeat(8, 1fr);
+                        grid-template-columns: repeat(5, 1fr);
                     }
                 }
                 @media (max-width: 640px) {
+                    .capabilities {
+                        padding: 28px 20px 80px;
+                    }
+                    .cap-grid {
+                        gap: 24px;
+                    }
+                    .cap-intro {
+                        padding-right: 0;
+                    }
+                    .cap-intro h2 {
+                        font-size: 30px;
+                        margin-bottom: 14px;
+                    }
+                    .cap-intro p {
+                        font-size: 14px;
+                        margin-bottom: 24px;
+                    }
                     .icon-grid {
-                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-columns: repeat(5, 1fr);
+                        gap: 10px;
+                    }
+                    .icon-badge {
+                        width: 46px;
+                        height: 46px;
+                        border-radius: 10px;
+                    }
+                    .cap-card {
+                        padding: 22px 20px;
+                        border-radius: 16px;
+                    }
+                    .cap-card-top {
+                        margin-bottom: 24px;
+                    }
+                    .cap-num {
+                        font-size: 34px;
+                    }
+                    .cap-icon {
+                        margin-bottom: 16px;
+                        padding: 10px;
+                    }
+                    .cap-card p {
+                        font-size: 13.5px;
+                        margin-bottom: 22px;
                     }
                 }
             `}} />

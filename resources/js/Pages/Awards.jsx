@@ -129,11 +129,24 @@ export default function Awards({ auth }) {
                 .cert-title { font-size: 18px; font-weight: bold; text-align: center; color: var(--text); }
 
                 @media (max-width: 860px){ 
-                  .awards-grid{ grid-template-columns: 1fr; gap: 40px; } 
-                  .collage { max-width: 100%; grid-auto-rows: 140px; position: static; }
+                  .awards-grid{ grid-template-columns: 1fr; gap: 36px; } 
+                  .collage { max-width: 100%; grid-auto-rows: 130px; position: static; margin-bottom: 18px; }
+                  .collage .ph-l2, .collage .ph-p2 { transform: translateY(18px); }
+                  .collage .ph-l2:hover, .collage .ph-p2:hover { transform: translateY(18px) scale(1.03); }
                 }
-                @media (max-width: 480px){
-                  .collage { grid-auto-rows: 100px; gap: 8px; }
+                @media (max-width: 640px){
+                  .awards { padding: 28px 20px 80px; }
+                  .awards-heading { font-size: 28px; margin-bottom: 12px; }
+                  .awards-sub { font-size: 13.5px; margin-bottom: 28px; }
+                  .collage { grid-auto-rows: 95px; gap: 10px; margin-bottom: 14px; }
+                  .collage .ph-l2, .collage .ph-p2 { transform: translateY(14px); }
+                  .award-card { padding: 14px; gap: 12px; border-radius: 12px; }
+                  .award-icon { width: 36px; height: 36px; }
+                  .award-info strong { font-size: 13px; line-height: 1.35; }
+                  .award-info span { font-size: 11.5px; }
+                  .modal-content { padding: 14px; max-width: 92vw; gap: 12px; }
+                  .close-btn { top: -12px; right: -12px; width: 32px; height: 32px; }
+                  .cert-title { font-size: 15px; }
                 }
             `}} />
 

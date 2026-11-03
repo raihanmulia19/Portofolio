@@ -205,32 +205,41 @@ export default function Projects({ auth }) {
                 <div className="archive-header">
                     <div className="archive-eyebrow">ARCHIVE</div>
                     <h1 className="archive-title">Technical Projects<span className="cursor">|</span></h1>
-                    <p className="archive-subtitle">A complete collection of my technical work, systems, and digital projects.</p>
+                    <p className="archive-subtitle">Kumpulan lengkap karya teknis, sistem informasi, dan proyek digital yang pernah saya kembangkan.</p>
                 </div>
 
                 <div className="project-list">
-                    {projects.map((project, index) => (
-                        <a href={project.link} className="project-row" key={index} style={{textDecoration: 'none'}}>
-                            <div className="project-num">{project.id}</div>
-                            <div className="project-content">
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                                <div className="project-tech-label">{project.tech}</div>
-                                <div className="project-icons">
-                                    {project.icons.map((iconPath, idx) => (
-                                        <div className="project-icon-box" key={idx}>
-                                            <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${iconPath}`} alt="tech icon" />
-                                        </div>
-                                    ))}
+                    {projects.map((project, index) => {
+                        const hasLink = project.link && project.link !== "#";
+                        const RowTag = hasLink ? 'a' : 'div';
+                        const rowProps = hasLink
+                            ? { href: project.link, target: "_blank", rel: "noopener noreferrer", style: { textDecoration: 'none' } }
+                            : { style: { cursor: 'default' } };
+                        return (
+                            <RowTag {...rowProps} className="project-row" key={index}>
+                                <div className="project-num">{project.id}</div>
+                                <div className="project-content">
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
+                                    <div className="project-tech-label">{project.tech}</div>
+                                    <div className="project-icons">
+                                        {project.icons.map((iconPath, idx) => (
+                                            <div className="project-icon-box" key={idx}>
+                                                <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${iconPath}`} alt="tech icon" />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="project-link">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                            </div>
-                        </a>
-                    ))}
+                                <div className="project-link">
+                                    {hasLink && (
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    )}
+                                </div>
+                            </RowTag>
+                        );
+                    })}
                 </div>
             </div>
         </PortfolioLayout>

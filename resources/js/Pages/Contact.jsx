@@ -239,11 +239,11 @@ export default function Contact({ auth }) {
                     <h1 className="contact-title">LET'S<br />WORK<br />TOGETHER</h1>
                     
                     <div className="contact-subtitle-1">
-                        Looking for the next problem worth solving.
+                        Siap berkontribusi untuk membangun solusi berikutnya.
                     </div>
                     
                     <div className="contact-subtitle-2">
-                        I'm open to opportunities where I can contribute to software testing, web development, IT operations, and digital workflows.
+                        Saya terbuka untuk peluang karier dan kolaborasi di bidang pengembangan web, software testing, IT support, jaringan komputer, serta alur kerja digital.
                     </div>
                     
                     <a href="/resume.pdf" download="Resume_Muhammad_Raihan.pdf" className="btn-resume">

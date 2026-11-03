@@ -32,6 +32,7 @@ export default function Welcome({ auth }) {
                         Senang belajar, membangun solusi yang rapi, serta terbuka untuk kolaborasi dan peluang baru.
                     </p>
                     <div className="intro-bottom">
+                        <a href="https://github.com/raihanmulia19" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="https://www.linkedin.com/in/muhammad-raihan-it" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         <a href="https://www.instagram.com/muhammadd_raihann" target="_blank" rel="noopener noreferrer">Instagram</a>
                         <a href="mailto:raihanmulia19@gmail.com">Email</a>

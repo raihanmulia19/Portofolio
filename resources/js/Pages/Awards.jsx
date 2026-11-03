@@ -156,7 +156,12 @@ export default function Awards({ auth }) {
 
                 <div className="awards-list">
                   {displayedCredentials.map((cert, idx) => (
-                      <div className="award-card" key={idx} onClick={() => setSelectedCert(cert)}>
+                      <div
+                          className="award-card"
+                          key={idx}
+                          onClick={() => cert.image && setSelectedCert(cert)}
+                          style={{ cursor: cert.image ? 'pointer' : 'default' }}
+                      >
                           <div className="award-icon">
                               <Icon icon={cert.icon} width="22" height="22" />
                           </div>
@@ -164,7 +169,7 @@ export default function Awards({ auth }) {
                               <strong>{cert.title}</strong>
                               <span>{cert.org} &bull; {cert.date}</span>
                           </div>
-                          <div className="award-link">&#8599;</div>
+                          {cert.image && <div className="award-link">&#8599;</div>}
                       </div>
                   ))}
                   

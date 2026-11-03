@@ -4,7 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ config('app.name', 'Muhammad Raihan - Portfolio') }}</title>
+        <meta name="description" content="Portofolio Muhammad Raihan — Software Developer & Technology Enthusiast. Lulusan D4 Teknik Informatika Politeknik Caltex Riau (Cumlaude) yang berfokus pada pengembangan web, jaringan komputer, keamanan siber, dan solusi digital.">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Muhammad Raihan — Software Developer & Technology Enthusiast">
+        <meta property="og:description" content="Portofolio karya teknis, sistem informasi, keahlian, dan sertifikasi profesional Muhammad Raihan.">
+        <meta property="og:image" content="/profile.png">
+        <meta name="twitter:card" content="summary_large_image">
         <link rel="icon" type="image/png" href="/icon.png?v=2">
         <link rel="shortcut icon" href="/favicon.ico?v=2">
 

@@ -74,11 +74,20 @@ export default function About({ auth }) {
                   <div><strong>Building</strong><span>Proyek web &amp; digital</span></div>
                 </div>
                 <div className="currently-item">
-                  <div className="currently-icon">&#128269;</div>
+                  <div className="currently-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="7" />
+                      <path d="m20 20-3.5-3.5" />
+                    </svg>
+                  </div>
                   <div><strong>Exploring</strong><span>System testing &amp; QA</span></div>
                 </div>
                 <div className="currently-item">
-                  <div className="currently-icon">☁️</div>
+                  <div className="currently-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6.5 19a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 17.8 8.2a4.5 4.5 0 0 1 .7 8.95H6.5Z" />
+                    </svg>
+                  </div>
                   <div><strong>Learning</strong><span>Cloud &amp; AI</span></div>
                 </div>
               </div>

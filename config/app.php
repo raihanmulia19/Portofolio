@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Muhammad Raihan - Portfolio'),
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'base64:dGhpcy1pcy1hLXZhbGlkLTMyLWJ5dGUtYXBwLWtleSE='),
 
     'previous_keys' => [
         ...array_filter(

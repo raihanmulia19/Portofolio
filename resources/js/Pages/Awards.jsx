@@ -182,7 +182,14 @@ export default function Awards({ auth }) {
                               <strong>{cert.title}</strong>
                               <span>{cert.org} &bull; {cert.date}</span>
                           </div>
-                          {cert.image && <div className="award-link">&#8599;</div>}
+                          {cert.image && (
+                              <div className="award-link">
+                                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M7 17L17 7" />
+                                      <path d="M7 7h10v10" />
+                                  </svg>
+                              </div>
+                          )}
                       </div>
                   ))}
                   

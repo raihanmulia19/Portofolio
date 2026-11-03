@@ -1,4 +1,4 @@
-import{j as a,H as e}from"./app-DtpRwNIn.js";import{P as s}from"./PortfolioLayout-ofSbjC3E.js";function l({auth:i}){return a.jsxs(s,{auth:i,children:[a.jsx(e,{title:"What I Can Do - Muhammad Raihan"}),a.jsx("style",{dangerouslySetInnerHTML:{__html:`
+import{j as a,H as e}from"./app-NRqswBqI.js";import{P as s}from"./PortfolioLayout-CpBYvG_6.js";function l({auth:i}){return a.jsxs(s,{auth:i,children:[a.jsx(e,{title:"What I Can Do - Muhammad Raihan"}),a.jsx("style",{dangerouslySetInnerHTML:{__html:`
                 .capabilities {
                     max-width: 1450px;
                     margin: 0 auto;

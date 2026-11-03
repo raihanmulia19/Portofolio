@@ -333,9 +333,13 @@ export default function Work({ auth }) {
                             target="_blank" 
                             rel="noreferrer"
                             className="view-project"
-                            style={{ display: 'inline-block', textDecoration: 'none', color: 'var(--text)' }}
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', textDecoration: 'none', color: 'var(--text)' }}
                         >
-                            {projects[activeIndex].link.includes('youtu') ? 'Tonton Video ↗' : 'Kunjungi Website ↗'}
+                            <span>{projects[activeIndex].link.includes('youtu') ? 'Tonton Video' : 'Kunjungi Website'}</span>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M7 17L17 7" />
+                                <path d="M7 7h10v10" />
+                            </svg>
                         </a>
                     )}
                 </div>

@@ -48,4 +48,33 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/build/{path}', function (string $path) {
+    if (str_contains($path, '..')) {
+        abort(404);
+    }
+    $filePath = public_path('build/' . $path);
+    if (!file_exists($filePath) || is_dir($filePath)) {
+        abort(404);
+    }
+
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+
+    $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+    $mime = match ($ext) {
+        'js', 'mjs' => 'application/javascript; charset=utf-8',
+        'css' => 'text/css; charset=utf-8',
+        'json' => 'application/json; charset=utf-8',
+        'svg' => 'image/svg+xml',
+        default => mime_content_type($filePath) ?: 'application/octet-stream',
+    };
+
+    header('Content-Type: ' . $mime);
+    header('Content-Length: ' . filesize($filePath));
+    header('Cache-Control: public, max-age=31536000, immutable');
+    readfile($filePath);
+    exit;
+})->where('path', '.*');
+
 require __DIR__.'/auth.php';
